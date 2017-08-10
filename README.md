@@ -2,7 +2,7 @@
 windows 10 compatible<br>
 Kernel Mode, driver only, ring O, remote UDP keylogger. 
 
-# Note: Using this software is On your Risk.
+# Note: Using this software is at your Own Risk.
 # The Author will not be held responsible by any circumstances.
 
 # Tech
