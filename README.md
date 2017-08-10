@@ -2,6 +2,9 @@
 windows 10 compatible<br>
 Kernel Mode, driver only, ring O, remote UDP keylogger. 
 
+# Note: Using this software is On your responsibility.
+# The Author will not be held responsible by any circumstances.
+
 # Tech
 this project splits down into two parts:<br>
 1 KeyBoard hook.<br>
@@ -21,8 +24,8 @@ currently only the local keylogger is Generic nd can be used W/O building the dr
 # Installtion:
 !The driver is not signed, so you will have to disable code integrity (or get me a sponser to sign the driver), after that:<br>
 Open an elevated command prompt:<br>
-sc create kMon type=kernel binpath="\path\to\your\driver.sys"
-sc start kMon
+sc create kMon type=kernel binpath="\path\to\your\driver.sys"<br>
+sc start kMon<br>
 # Uninstall:
 sc stop Kmon
 # if you encounter any problems simply restart your computer.
