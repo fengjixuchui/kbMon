@@ -789,3 +789,5 @@ DriverEntry(
 	return STATUS_SUCCESS;
 }
 
+#pragma warning (pop)
+
