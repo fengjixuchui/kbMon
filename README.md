@@ -2,6 +2,9 @@
 windows 10 compatible<br>
 Kernel Mode, driver only, ring O, remote UDP keylogger. 
 
+# Application Security
+i did not implemented any IoCtl, in order to avoid any Security Issues. in addition, i did not implemented any Revc-datagram method's for this exact same reason, however if you use this driver & see any security problems, please report them here as an issue.
+
 # Note: Using this software is at your Own Risk.
 # The Author will not be held responsible by any circumstances.
 
