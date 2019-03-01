@@ -45,5 +45,5 @@ The driver is not signed, so you will have to disable code integrity:<br>
   shutdown /r -f -t 00<br>
 # if you encounter any problems simply restart your computer.
 For any bugs comment an issue in this github repo.
-enjoy!
-
+enjoy!<br>
+paypal.me/theakayn<br>
