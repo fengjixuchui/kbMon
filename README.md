@@ -30,7 +30,7 @@ so you can implement networking and hooks as you wish at the kernel level.
 <html> <a href="https://github.com/akayn/kbMon/blob/master/Iliad/src/Driver.c">the major code and main logic</a><html>.<br><br>
 
 # Usage
-currently only the local keylogger is Generic and can be used W/O building the driver (as it simply logs the keystroke's to C:\\Windows\\logs), but the remote udp based (that do not need to write any data to disk to run), needs to be build to your server address (or any other solution. this can be done with very minor code modifications. e.g let the driver read from the registry your ip and load it in /src/driver.c line 420).
+currently only the local keylogger is Generic and can be used W/O building the driver (as it simply logs the keystroke's to C:\\Windows\Logs\HomeGroup\klog.txt), but the remote udp based (that do not need to write any data to disk to run), needs to be build to your server address (or any other solution. this can be done with very minor code modifications. e.g let the driver read from the registry your ip and load it in /src/driver.c line 420).
 # Install:
 The driver is not signed, so you will have to disable code integrity:<br>
 (From an elevated command prompt):<br>
