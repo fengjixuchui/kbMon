@@ -46,4 +46,4 @@ The driver is not signed, so you will have to disable code integrity:<br>
 # if you encounter any problems simply restart your computer.
 For any bugs comment an issue in this github repo.
 enjoy!<br>
-https://paypal.me/theakayn<br>
+
